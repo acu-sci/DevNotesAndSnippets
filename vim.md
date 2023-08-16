@@ -9,11 +9,18 @@
    - To return to command mode: Press `Esc`
 
 * **Moving the cursor:**
+   - **$** - go to the end of the line
+   - **0** - go to the start of the line
    - **h** - Move the cursor left.
    - **j** - Move the cursor down.
    - **k** - Move the cursor up.
    - **l** - Move the cursor right.
 
+* **Fancy moving cursor:**
+   - **f** - find and move to a character in current line
+   - **w** - go to the start of the next word
+   - **b** - go backwards in words
+   - **}** - move to next paragraph
 * **Moving to specific line numbers:**
    - To jump to a specific line number: `G` followed by the line number. For example, `10G` to go to line 10.
 
