@@ -37,4 +37,18 @@ class TableauHook(BaseHook):
         with self.get_conn() as server:
             status, _ = server.jobs.get_by_id(job_id)
             return status.status
+        
+    def get_latest_job_for_datasource(self, project_name, datasource_name):
+        with self.get_conn() as server:
+            all_jobs, _ = server.jobs.get()  # Get all jobs
+            all_jobs = sorted(all_jobs, key=lambda j: j.created_at, reverse=True)  # Sort by created date
+        
+            # Filter jobs related to the datasource
+            for job in all_jobs:
+                # This assumes you have a way to determine if a job is related to your datasource.
+                # This is a simple example that checks the job's notes attribute. Adjust based on your specifics.
+                if datasource_name in job.notes:
+                    return job.id
+                
+            return None
 
