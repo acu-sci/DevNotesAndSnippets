@@ -1,7 +1,7 @@
 from datetime import datetime
 import airflow
 from airflow import DAG
-from custom_tableau_modules import TableauRefreshOperator
+from operators.tableau import TableauRefreshOperator
 
 default_args = {
     'start_date': airflow.utils.dates.days_ago(0)
@@ -18,8 +18,7 @@ dag = DAG(
 refresh_tableau_task = TableauRefreshOperator(
     task_id='refresh_tableau_extract',
     tableau_conn_id='tableau_default',  # Assuming a connection setup in Airflow named 'tableau_default'
-    workbook_name='MyWorkbook',  # Name of the Tableau workbook you wish to refresh
+    project_name='my_project',
+    datasource_name='my_datasource',
     dag=dag
 )
-
-refresh_tableau_task
