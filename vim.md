@@ -16,6 +16,11 @@
    - **k** - Move the cursor up.
    - **l** - Move the cursor right.
 
+* **Multicursor:**
+   - v to enter visual mode  
+   - make a selection  
+   - I to enter insert mode in all lines of selecttion  
+
 * **Fancy moving cursor:**
    - **f** - find and move to a character in current line
    - **w** - go to the start of the next word
