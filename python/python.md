@@ -21,10 +21,10 @@ config(requirements.txt/Pipfile/environment.yml)
 - install virtual environment:
   - go to desired folder and create virtualenv
     for python2
-    > virtualenv venv-01
+    > virtualenv .venv-01
 
     for python3
-    > python -m venv venv-01
+    > python -m venv .venv-01
 
 - activate virtual environment
   >source venv-01/bin/activate  
